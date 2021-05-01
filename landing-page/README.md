@@ -1,13 +1,12 @@
 # Landing Page Project
 
-## Table of Contents
+# Tasks
 
-* [Instructions](#instructions)
+## Build the navigation bar dynamically 
+Navigation starts as empty UL that will be populated with JS
 
-## Instructions
+## Highlights section in viewport upon scrolling.
+Highlights is occurred by Adding class 'active' to a specific section when near top of viewport
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+## Scrolls to anchors from navigation 
+Scroll to anchor ID using scrollTO event
