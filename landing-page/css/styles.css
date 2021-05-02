@@ -78,6 +78,7 @@ section {
 
 .navbar__menu li {
     display: inline-block;
+    cursor: pointer;
 }
 
 .navbar__menu .menu__link {
@@ -89,6 +90,12 @@ section {
 }
 
 .navbar__menu .menu__link:hover {
+    background: #333;
+    color: #fff;
+    transition: ease 0.3s all;
+}
+
+.navbar__menu .menu__link__active {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;

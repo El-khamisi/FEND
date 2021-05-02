@@ -28,7 +28,7 @@ var flag = 1;
  * 
  */
 
-function handler(className) {
+let handler = (className) => {
     let elements = document.querySelectorAll(`.${className}`);
     for (let i = 0; i < elements.length; i++) {
         elements[i].addEventListener("click", (e) => {
@@ -48,25 +48,30 @@ function handler(className) {
 // build the nav
 function buildNav() {
     let frg = new DocumentFragment();
-    for (const sec of sections) {
+    sections.forEach((sec) => {
         let li = document.createElement("li");
         let name = sec.getAttribute("data-nav");
         li.innerHTML = `<a class="menu__link">${name}</a>`;
         frg.appendChild(li);
-    }
+    });
     navList.appendChild(frg);
 }
 
 // Add class 'active' to section when near top of viewport
 setInterval(() => {
     if (!flag) {
+        let act = 1;
+        let menuActive = document.querySelectorAll(".menu__link");
         for (let i = 0; i < sections.length; i++) {
             let bounds = sections[i].getBoundingClientRect();
-            // console.log(`${i} ${bounds.top}  ${bounds.bottom} `);
-            if (bounds.bottom >= 0 && bounds.top <= (window.innerHeight || html.clientHeight)) {
+
+            if (bounds.bottom >= 300 && bounds.top <= (window.innerHeight || html.clientHeight) && act) {
                 sections[i].classList.add("your-active-class");
+                menuActive[i].classList.add("menu__link__active");
+                act = 0;
             } else {
                 sections[i].classList.remove("your-active-class");
+                menuActive[i].classList.remove("menu__link__active");
             }
         }
     }
