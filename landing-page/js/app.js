@@ -18,9 +18,9 @@
  * 
  */
 
-var navList = document.querySelector("#navbar__list");
-var sections = document.querySelectorAll("section");
-var flag = 1;
+let navList = document.querySelector("#navbar__list");
+let sections = document.querySelectorAll("section");
+let flag = 1;
 
 /**
  * End Global Variables
