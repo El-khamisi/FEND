@@ -25,7 +25,11 @@ body {
 
 #generate {}
 
-#entryHolder {}
+#entryHolder {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2%;
+}
 
 #date {}
 
