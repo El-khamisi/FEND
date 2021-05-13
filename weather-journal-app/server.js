@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = [];
+projectData = {};
 const port = 8000;
 
 // Require Express to run server and routes
@@ -33,7 +33,7 @@ app.listen(port, listening);
 
 app.get('/all', (req, res) => {
     res.send(projectData);
-    projectData = [];
+    projectData = {};
     console.log(`Responded by projectData`);
 });
 
@@ -45,6 +45,7 @@ app.post('/all', (req, res) => {
         temp: req.body.temp,
         feelings: req.body.Content.length === 0 ? null : req.body.Content
     };
-    projectData.push(Entity);
+    projectData["data"] = Entity;
     console.log('Data is loaded');
+    console.log(projectData);
 });
