@@ -1,7 +1,20 @@
-import { checkForName } from './js/nameChecker'
-import { handleSubmit } from './js/formHandler'
+import * as resultField from './js/resultField'
+import { checkEmpty, handleSubmit } from './js/formHandler'
 
-console.log(checkForName);
+import './styles/resets.scss';
+import './styles/base.scss';
+import './styles/footer.scss';
+import './styles/form.scss';
+import './styles/header.scss';
 
-alert("I EXIST")
+
+console.log(checkEmpty);
 console.log("CHANGE!!");
+
+
+
+export {
+    resultField,
+    handleSubmit,
+    checkEmpty
+}

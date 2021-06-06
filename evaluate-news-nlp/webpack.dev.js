@@ -1,7 +1,8 @@
-const path = require('path')
-const webpack = require('webpack')
-const HtmlWebPackPlugin = require("html-webpack-plugin")
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 
 module.exports = {
     entry: './src/client/index.js',
@@ -10,7 +11,17 @@ module.exports = {
     stats: 'verbose',
     output: {
         filename: "main.js",
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        library: 'Client',
+        libraryTarget: 'var',
+    },
+    devServer: {
+        injectClient: false, //For Global issue in devServer webpack
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+            "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+        }
     },
     module: {
         rules: [{
@@ -27,24 +38,10 @@ module.exports = {
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",
-            filename: "./index.html",
+            filename: "index.html",
         }),
         new CleanWebpackPlugin({
-            // Simulate the removal of files
-            dry: true,
-            // Write Logs to Console
-            verbose: true,
-            // Automatically remove all unused webpack assets on rebuild
-            cleanStaleWebpackAssets: true,
-            protectWebpackAssets: false
+            verbose: true
         })
     ]
 }
-
-/*
-    output: {
-        libraryTarget: 'var',
-        library: 'Client'
-    },
-
-*/
