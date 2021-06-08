@@ -1,5 +1,6 @@
 import * as resultField from './js/resultField'
-import { checkEmpty, handleSubmit } from './js/formHandler'
+import { checkEmpty } from './js/checkEmpty'
+import { handleSubmit } from './js/formHandler'
 
 import './styles/resets.scss';
 import './styles/base.scss';
@@ -8,7 +9,7 @@ import './styles/form.scss';
 import './styles/header.scss';
 
 
-console.log(checkEmpty);
+
 console.log("CHANGE!!");
 
 
