@@ -1,0 +1,54 @@
+#main {
+    margin: 5vh;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 20px;
+}
+
+.trip {
+    width: 50%;
+    height: 60vh;
+    border-radius: 20px;
+    background: #ecf0f3;
+    box-shadow: 0px 0px 50px whitesmoke;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    img {
+        border-radius: 20px;
+        width: 40%;
+    }
+    div {
+        text-align: left;
+        display: inline-block;
+        width: 50%;
+        font-size: 1.5em;
+    }
+    button {
+        width: 40%;
+    }
+}
+
+@media (max-width: 576px) {
+    .trip {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        div {
+            font-size: 20px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .trip {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+}

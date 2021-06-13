@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capstone - Travel App</title>
+</head>
+
+<body>
+
+    <header id="header">
+        <form id="container">
+            <input id="user-input" list="country" placeholder="Type your destination">
+            <datalist id="country">
+
+            </datalist>
+
+            <input type="date" id="date">
+            <button id="submit-btn" type="submit">Find A Trip...!</button>
+        </form>
+    </header>
+
+    <main id="main">
+
+        <!-- <div class="trip ">
+            <img src=>
+            <div>
+                City name: ${data.city_name}<br> Temperature: ${data.temp}C <br> Weather: ${data.weather.description}
+            </div>
+            <button id="${data.city_name}">delete</button>
+
+        </div> -->
+
+
+    </main>
+
+    <footer id="footer">
+
+    </footer>
+
+
+
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+</body>
+
+</html>
