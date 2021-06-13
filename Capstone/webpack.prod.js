@@ -51,6 +51,7 @@ module.exports = {
         ]
     },
     plugins: [
+
         new WorkboxPlugin.GenerateSW(),
         new MiniCssExtractPlugin({ filename: '[name].css' }),
         new CleanWebpackPlugin({
