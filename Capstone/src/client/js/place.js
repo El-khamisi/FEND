@@ -9,7 +9,9 @@ const btn = $('#submit-btn');
 
 
 let listOfdata = {};
-let inputlength = user_input.val().length
+let inputlength = user_input.val().length;
+
+//Refresh lookup autocomplete drop-down list  
 setInterval(() => {
     if (user_input.val().length != inputlength && user_input.val().length != 0) {
         inputlength = user_input.val().length;
@@ -18,6 +20,13 @@ setInterval(() => {
 
 }, 1500);
 
+
+
+/**
+ * Search by first few letters 
+ * And store in object
+ * @param city_name
+ */
 async function handlesearch(inputText) {
 
     listOfdata = {};
@@ -48,6 +57,9 @@ async function handlesearch(inputText) {
     }
 }
 
+/**
+ * Click event to Submit button
+ */
 btn.on('click', async(event) => {
 
     event.preventDefault();

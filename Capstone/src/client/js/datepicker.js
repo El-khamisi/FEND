@@ -1,5 +1,7 @@
 const picker = document.getElementById("date");
 
+
+//Fetch current date
 const date = new Date();
 let day = date.getDate();
 let month = date.getMonth() + 1;
@@ -15,8 +17,11 @@ if (month < 10) {
 const fullDate = year + '-' + month + '-' + day;
 picker.setAttribute("min", fullDate);
 
-//return 1 for Forecast 
-//return 0 for Current
+
+/**
+ * Function calculate difference in dates
+ * @returns How long will the journey take
+ */
 function calcDate() {
 
     if (picker.value.length == 0) {
@@ -31,10 +36,10 @@ function calcDate() {
     month = parseInt(month)
 
     if (pickerDay < day) {
-        return ((30 - day) + pickerDay >= 7 ? 1 : 0)
+        return ((30 - day) + pickerDay)
     }
 
-    return (pickerDay - day >= 7 ? 1 : 0);
+    return (pickerDay - day);
 }
 
 

@@ -7,15 +7,22 @@ const btn = $('#submit-btn');
 const user_input = $('#user-input')
 
 
+/**
+ * Function to fetch data from weather api  and bring preview photo
+ * @param name_of_city 
+ * @param latitude 
+ * @param longitude
+ */
 async function submit(value, lat, lng) {
 
     try {
 
-        //return 1 for Forecast 
-        //return 0 for Current
+
         const diff = calcDate();
         let response;
-        if (diff == 1) {
+
+        //decide for current weather OR prediction
+        if (diff > 7) {
             response = await fetch(`http://localhost:8081/forecast/${lat}&${lng}`);
 
         } else {
@@ -23,10 +30,11 @@ async function submit(value, lat, lng) {
         }
         const resimg = await fetch(`http://localhost:8081/pixabay/${value}`);
 
+        //Json Object
         const img = await resimg.json()
         const info = await response.json();
 
-        fillData(img, info)
+        fillData(img, info, diff)
     } catch (error) {
         alert(error)
     }
